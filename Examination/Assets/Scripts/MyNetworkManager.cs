@@ -51,8 +51,10 @@ public class MyNetworkManager : NetworkManager
         int MaxShapes = IndexList.Count;
         if (MaxShapes == 0) { Debug.Log(MaxShapes); }
 
-        //2. ON LIST REQUEST REMOVE REQUESTED
+        //2. GET RANDOM INT FROM 0 TO LIST LENGTH
         int IndexReq = IndexList[Random.Range(0, MaxShapes)];
+
+        //3. ON LIST REQUEST REMOVE REQUESTED
         IndexList.Remove(IndexReq);
         return IndexReq;
     }
