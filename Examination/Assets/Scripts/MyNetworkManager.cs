@@ -49,13 +49,18 @@ public class MyNetworkManager : NetworkManager
     {
         //1. SETS MAX AMOUNT OF SHAPES
         int MaxShapes = IndexList.Count;
-        if (MaxShapes == 0) { Debug.Log(MaxShapes); }
+        if (MaxShapes == 1) { Debug.Log("IndexEmpty"); }
 
         //2. GET RANDOM INT FROM 0 TO LIST LENGTH
         int IndexReq = IndexList[Random.Range(0, MaxShapes)];
 
         //3. ON LIST REQUEST REMOVE REQUESTED
-        IndexList.Remove(IndexReq);
+        Debug.Log(IndexReq);
+        if(IndexList.Count != 1)
+        {
+            IndexList.Remove(IndexReq);
+        } 
+        
         return IndexReq;
     }
 }
